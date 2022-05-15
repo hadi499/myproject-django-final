@@ -1,0 +1,64 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block contents %}
+<div class="container mt-5">
+    <div class="row justify-content-center" mt-4>
+        <div class="col-md-12">.
+            <h3 class="text-center mb-4">Daftar Harian Pengiriman Barang</h3>
+            <p><span id="hasil"></span></p>
+            
+            <table id="example" class="table text-center table-bordered border-primary ">
+                <thead class="">
+                  <tr>
+                  
+                    <th scope="col">No. Resi</th>
+                    <th scope="col">Nama Barang</th>
+                    <th scope="col">Kategori</th>                    
+                    <th scope="col">Nama Pengirim</th>     
+                    <th scope="col">Alamat Kirim</th>     
+                    <th scope="col">Nama Tujuan</th>     
+                    <th scope="col">Alamat Tujuan</th>     
+                    <th scope="col">Berat</th>       
+                    <th scope="col">@Kilo</th>
+                    <th scope="col">Tarif</th>
+                           
+                         
+                        
+                  </tr>
+                </thead>
+                <tbody>
+
+                      {% load humanize %}
+                      {% for h in harian %}
+                        <tr>                        
+                        <td>{{h.resi}}</td>
+                        <td>{{h.nama_barang}}</td>
+                        <td>{{h.kategori}}</td>                        
+                        <td>{{h.nama_pengirim}}</td>                        
+                        <td>{{h.alamat_pengirim}}</td>                        
+                        <td>{{h.nama_tujuan}}</td>                        
+                        <td>{{h.alamat_tujuan}}</td>   
+                        <td>{{h.berat}}</td>
+                        <td>{{h.tarif_per_kilo}}</td>
+                        <td class="price">{{h.tarif|intcomma}}</td>                        
+                                             
+                        </tr>
+                      
+                      {% endfor %}                    
+                 
+                </tbody>
+              </table>
+
+
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'shipping/script.js' %}"></script>
+
+{% endblock contents %}
+
+
+
+

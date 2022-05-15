@@ -1,0 +1,30 @@
+form{% extends './base.html' %}
+
+{% block contents %}
+<div class="container">
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-4">
+      <h2 class="text-center" style="margin-top: 70px" >Tambah Kategori</h2>
+    <form  method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama Kategori</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nama"
+            name="nama"
+            aria-describedby="nama"
+          />
+        </div>       
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>      
+    </div>
+  </div>   
+</div>
+
+{% endblock contents %}
+
+
+

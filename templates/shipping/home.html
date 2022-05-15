@@ -1,0 +1,55 @@
+{% extends './base.html' %}
+
+{% block contents %}
+<div class="container mt-5">
+    <div class="row justify-content-center" mt-4>
+        <div class="col-md-8">.
+            <h2 class="text-center mb-4">Daftar Pengiriman Barang</h2>
+            
+            <table class="table text-center table-bordered border-primary ">
+                <thead class="">
+                  <tr>
+                  
+                    <th scope="col">No. Resi</th>
+                    <th scope="col">Nama Barang</th>
+                    <th scope="col">Kategori</th>                    
+                    <th scope="col">Tanggal Kirim</th>     
+                    <th scope="col">Action</th>       
+                        
+                  </tr>
+                </thead>
+                <tbody>
+
+                     
+                      {% for s in shipping %}
+                        <tr>                        
+                        <td>{{s.resi}}</td>
+                        <td>{{s.nama_barang}}</td>
+                        <td>{{s.kategori}}</td>                        
+                        <td>{{s.created_at}}</td>       
+                        <td class="text-center">                          
+                          <a href="{% url 'shipping-detail' s.id %}"><span class="badge rounded-pill bg-primary ">detail</span></a>
+
+                      </td>
+                                            
+                                               
+                        </tr>
+                      
+                      {% endfor %}                    
+                 
+                </tbody>
+              </table>
+
+          
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock contents %}
+
+
+
+

@@ -1,0 +1,43 @@
+{% extends './base.html' %}
+
+
+{% block contents %}
+
+<div class="container " style="margin-top: 80px">
+    <div class="row justify-content-center">
+        <div class="col-md-8">           
+          {% load humanize %}
+            <div class="card text-dark bg-light border-info mb-3">
+                <div class="card-header">RESI: {{shipping.resi}}</div>
+                <div class="card-body">                
+                  <p class="card-text">Nama Barang: {{shipping.nama_barang}}</p>
+                  <p class="card-text">Kategori: {{shipping.kategori}}</p>
+                  <p class="card-text">Nama Pengirim: {{shipping.nama_pengirim}}</p>
+                  <p class="card-text">Alamat Pengirim: {{shipping.alamat_pengirim}}</p>
+                  <p class="card-text">Nama Tujuan: {{shipping.nama_tujuan}}</p>
+                  <p class="card-text">Alamat Tujuan: {{shipping.alamat_tujuan}}</p>
+                  <p class="card-text">Berat: {{shipping.berat}} kg</p>                
+                  <p class="card-text ">Tarif per kilo: <span class="fw-bold">Rp. {{shipping.tarif_per_kilo|intcomma}},00</span> </p>
+                  <p class="card-text ">Jumlah Tarif: Rp. <span class="fw-bold" >{{shipping.tarif|intcomma}},00</span></p>
+                  <p class="card-text">Tanggal Kirim: {{shipping.created_at}}</p>
+                  <a href="{% url 'all-data' %}" class="card-link">back</a>
+                </div>
+
+              </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock contents %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+{% extends './base.html' %}
+
+{% block contents %}
+<div class="container mt-5">
+    <div class="row justify-content-center" mt-4>
+        <div class="col-md-2 mt-4">
+            <h3 class="text-center">Category</h3>            
+            <a class="badge bg-success float-end m-2" href="{% url 'ganti-category' %}" role="button"><i class="bi bi-plus-square"></i></a>
+            
+            <table class="table table-success table-striped ">
+                <thead>
+                  <tr>                   
+                    <th scope="col">Category</th>
+                                      
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                      {% for c in category %}
+                        <tr>                        
+                        <td>{{c.nama}}</td>                                         
+                        </tr>
+                      
+                      {% endfor %}
+                    
+                 
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock contents %}

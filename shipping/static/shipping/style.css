@@ -1,0 +1,12 @@
+.row span {
+    background-color: rgb(124, 174, 231);
+    font-weight: bold;
+}
+
+.dataTables_length {
+    margin-bottom: 20px !important;
+}
+
+.dataTables_filter {
+    margin-bottom: 20px !important;
+}

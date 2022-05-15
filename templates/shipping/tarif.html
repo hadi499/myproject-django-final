@@ -1,0 +1,37 @@
+{% extends './base.html' %}
+
+{% block contents %}
+<div class="container mt-5">
+    <div class="row justify-content-center" mt-4>
+        <div class="col-md-4 mt-4">
+            <h2 class="text-center">Harga Per Kilo</h2>            
+            <a class="btn btn-success m-4 float-end" href="{% url 'ganti-tarif' %}" role="button"><i class="bi bi-plus-square"></i></a>
+            
+            <table class="table table-success table-striped ">
+                <thead>
+                  <tr>                   
+                    <th scope="col">Harga</th>
+                    <th scope="col">Create At</th>                       
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                      {% for t in tarif %}
+                        <tr>                        
+                        <td>{{t.harga}}</td>
+                        <td>{{t.created_at}}</td>                        
+                        </tr>
+                      
+                      {% endfor %}
+                    
+                 
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock contents %}
